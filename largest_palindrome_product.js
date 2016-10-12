@@ -26,6 +26,18 @@ module.exports = function(digits){
 
   var maxNum = findMaxNum(digits);
 
+  for (let i = maxNum; i > 0; i--) {
+  	for (let j = maxNum; j > 0; j--) {
+  		let product = i * j;
+  		if (isPalindrome(product)) {
+  			if (palindromeNumber < product) {
+  				factor_0 = i;
+  				factor_1 = j;
+  				palindromeNumber = product;
+  			}
+  		}
+  	}
+  }
 
   return {
     factor_0 : factor_0,
