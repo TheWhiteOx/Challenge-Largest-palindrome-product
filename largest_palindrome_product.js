@@ -11,7 +11,20 @@ module.exports = function(digits){
   var palindromeNumber = 0;
 
   // do your work here
+  function isPalindrome(number) {
+  	let num = number.toString()
+  	return num === num.split('').reverse().join('');
+  }
 
+  function findMaxNum(digits) {
+  	let result = '';
+  	for (let i = 0; i < digits; i++) {
+  		result = result + '9'
+  	}
+  	return parseInt(result);
+  }
+
+  var maxNum = findMaxNum(digits);
 
 
   return {
