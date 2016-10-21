@@ -10,7 +10,7 @@ module.exports = function(digits){
   var factor_1 = 0;
   var palindromeNumber = 0;
 
-  // do your work here
+
   function isPalindrome(number) {
   	let num = number.toString()
   	return num === num.split('').reverse().join('');
@@ -26,6 +26,8 @@ module.exports = function(digits){
 
   var maxNum = findMaxNum(digits);
 
+
+  // Brute force through all possible numbers
   for (let i = maxNum; i > 0; i--) {
   	for (let j = maxNum; j > 0; j--) {
   		let product = i * j;
