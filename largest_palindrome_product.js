@@ -12,16 +12,16 @@ module.exports = function(digits){
 
 
   function isPalindrome(number) {
-  	let num = number.toString()
-  	return num === num.split('').reverse().join('');
+    let num = number.toString()
+    return num === num.split('').reverse().join('');
   }
 
   function findMaxNum(digits) {
-  	let result = '';
-  	for (let i = 0; i < digits; i++) {
-  		result = result + '9'
-  	}
-  	return parseInt(result);
+    let result = '';
+    for (let i = 0; i < digits; i++) {
+      result = result + '9'
+    }
+    return parseInt(result);
   }
 
   var maxNum = findMaxNum(digits);
@@ -29,16 +29,16 @@ module.exports = function(digits){
 
   // Brute force through all possible numbers
   for (let i = maxNum; i > 0; i--) {
-  	for (let j = maxNum; j > 0; j--) {
-  		let product = i * j;
-  		if (isPalindrome(product)) {
-  			if (palindromeNumber < product) {
-  				factor_0 = i;
-  				factor_1 = j;
-  				palindromeNumber = product;
-  			}
-  		}
-  	}
+    for (let j = maxNum; j > 0; j--) {
+      let product = i * j;
+      if (isPalindrome(product)) {
+        if (palindromeNumber < product) {
+          factor_0 = i;
+          factor_1 = j;
+          palindromeNumber = product;
+        }
+      }
+    }
   }
 
   return {
